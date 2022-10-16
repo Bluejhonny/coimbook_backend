@@ -27,6 +27,10 @@ app.use(
     cookie: { secure: false },
   })
 )
+
+app.get("/", (req, res) => {
+  console.log("connected")
+  })
  
 //login
 app.post("/login", authUser)
