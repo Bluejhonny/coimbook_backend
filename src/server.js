@@ -11,8 +11,9 @@ const connectDB = require("./configs/db")
 connectDB()
 
 const app = express()
-PORT = 4000
 app.use(cors())
+PORT = 4000
+
 app.listen(process.env.PORT || PORT, () => console.log("run server " + PORT))
 app.use("/test", testRoute)
 app.use("/", userRoute)
