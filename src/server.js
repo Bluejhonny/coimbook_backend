@@ -3,6 +3,7 @@ if (process.env.NODE !== "production") {
 }
 
 const express = require("express")
+const cors = require("cors") //enable cors
 const testRoute = require("./routes/testRoute")
 const userRoute = require("./routes/userRoute")
 const balanceRoute = require("./routes/balanceRoute")
@@ -11,7 +12,7 @@ connectDB()
 
 const app = express()
 PORT = 4000
-
+app.use(cors())
 app.listen(process.env.PORT || PORT, () => console.log("run server " + PORT))
 app.use("/test", testRoute)
 app.use("/", userRoute)
