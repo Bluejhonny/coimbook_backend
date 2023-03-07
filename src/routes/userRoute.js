@@ -4,14 +4,10 @@ const cors = require("cors") //enable cors
 const session = require("express-session") // session middleware on the server side
 const MemoryStore = require('memorystore')(session)
 
-const verifyToken = require("../middleware/validateToken")
-const verifyNoToken = require("../middleware/validateNoToken")
 const authUser = require("../middleware/authUser")
 const registerUser = require("../middleware/registerUser")
-//const config = require("./configs/config")
 
 const app = express()
-//app.set("llave", config.llave)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
